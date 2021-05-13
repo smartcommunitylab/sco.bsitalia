@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap-italia/src/scss/bootstrap-italia';
+
+/* ==========================================================================
+Bootstrap-Italia alignment
+========================================================================== */
+.form-text.text-danger {
+    color: $red-accessible !important;
+  }
+  
+  .ng-valid.ng-touched {
+    @extend .is-valid !optional;
+  }
+  .ng-invalid.ng-touched {
+    @extend .is-invalid !optional;
+  }
+  
+  .form-group .form-text.text-danger {
+    @extend .invalid-feedback;
+    display: block;
+    position: inherit !important;
+  }
+  
+  @media (min-width: 992px) {
+    .bs-sticky .it-header-navbar-wrapper {
+      width: 100%;
+      z-index: 1;
+      position: fixed !important;
+      top: 0 !important;
+    }
+    .bs-sticky {
+      margin-bottom: 64px;
+    }
+  }
+  
