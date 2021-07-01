@@ -93,6 +93,16 @@ export class AuthService {
     this.manager.signoutRedirect();
   }
 
+  subscribeSignedIn(): Promise<void> {
+    return new Promise((resolve) => {
+      this.manager.events.addUserLoaded(() => {
+        this.checkLoggedIn().then(() => {
+          resolve();
+        });
+      });
+    });
+  }
+
   private navigateToStoredUrl(): void {
     // previousState can be set in the authExpiredInterceptor and in the userRouteAccessService
     // if login is successful, go to stored previousState and clear previousState

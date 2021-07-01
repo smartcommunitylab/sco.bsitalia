@@ -41,12 +41,12 @@
 
                   <!-- ACCESSO -->
                   <div class="it-access-top-wrapper" *ngSwitchCase="false">
-                    <a class="btn btn-primary btn-sm"  (click)="login()"  ><span jhiTranslate="global.menu.account.login">Sign in</span></a>
+                    <a class="btn btn-primary btn-sm"  (click)="login()"  ><span>{{'menu-account-login' | translate}}</span></a>
                   </div>
                   
                   <!-- MENU UTENTE -->
                   <div class="nav-item dropdown" *ngSwitchCase="true">
-                      <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
+                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                         <span>{{getName()|uppercase}}</span>
                         <svg class="icon d-none d-lg-block">
                           <use xlink:href="/bootstrap-italia/dist/svg/sprite.svg#it-expand"></use>
@@ -60,12 +60,12 @@
                               <ul class="link-list">
                                   <li>
                                       <a class="dropdown-item" routerLink="account/settings" >
-                                          <span jhiTranslate="global.menu.account.settings">Settings</span>
+                                          <span>{{'menu-account-settings' | translate}}</span>
                                       </a>
                                   </li>
                                   <li>
                                       <a class="dropdown-item" (click)="logout()" id="logout">
-                                          <span jhiTranslate="global.menu.account.logout">Sign out</span>
+                                          <span>{{'menu-account-logout' | translate}}</span>
                                       </a>
                                   </li>
                               </ul>

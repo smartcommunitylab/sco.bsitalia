@@ -3,7 +3,7 @@
       <li class="page-item" [ngClass]="{'disabled': page == 1}">
         <a class="page-link" (click)="goToPage(page - 1)">
           <svg class="icon icon-primary"><use xlink:href="/bootstrap-italia/dist/svg/sprite.svg#it-chevron-left"></use></svg>
-          <span class="sr-only" jhiTranslate="global.pageprevious">Pagina precedente</span>
+          <span class="sr-only">{{'global-page-prev' | translate}}</span>
         </a>
       </li>
       <li *ngIf="lastPage > 5 && page > 4" class="page-item"><a class="page-link" (click)="goToPage(1)">1</a></li>
@@ -14,7 +14,7 @@
 
       <li class="page-item">
         <a class="page-link" (click)="goToPage(page)" aria-current="page">
-          <span class="d-inline-block d-sm-none" jhiTranslate="global.page"></span> {{page}}
+          <span class="d-inline-block d-sm-none">{{'global-page' | translate}}</span> {{page}}
         </a>
       </li>
 
@@ -26,14 +26,14 @@
 
       <li class="page-item" [ngClass]="{disabled: page == lastPage}">
         <a class="page-link" (click)="goToPage(page + 1)">
-          <span class="sr-only" jhiTranslate="global.pageprevious">Pagina successiva</span>
+          <span class="sr-only" >{{'global-page-next' | translate}}</span>
           <svg class="icon icon-primary"><use xlink:href="/bootstrap-italia/dist/svg/sprite.svg#it-chevron-right"></use></svg>
         </a>
       </li>
     </ul>
 
     <div class="dropdown">
-        <a class="btn btn-dropdown dropdown-toggle" role="button" id="pagerChanger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >{{pageSize}} <span jhiTranslate="global.pageresults">risultati per pagina</span></a>
+        <a class="btn btn-dropdown dropdown-toggle" role="button" id="pagerChanger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >{{pageSize}} <span>{{'global-page-results' | translate}}</span></a>
         <div class="dropdown-menu" aria-labelledby="pagerChanger">
           <div class="link-list-wrapper">
             <ul class="link-list">
